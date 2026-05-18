@@ -56,7 +56,7 @@ app.config["GMAIL_APP_PASSWORD"] = os.environ.get("GMAIL_APP_PASSWORD")
 app.config["PASSWORD_RESET_EXPIRY_MINUTES"] = int(os.environ.get("PASSWORD_RESET_EXPIRY_MINUTES", "30"))
 
 try:
-   mongo = PyMongo(app, tlsCAFile=certifi.where())
+    mongo = PyMongo(app, tlsCAFile=certifi.where())
     # Trigger a simple operation to verify connection
     with app.app_context():
         # Using a timeout to ensure startup doesn't hang indefinitely
